@@ -1,13 +1,14 @@
 @extends('layout')
 @section('content')
+<div class="container">
 <h1>Task List</h1>
 <form action="/tasks" method="POST">
   {{ csrf_field() }}
-  <input type="text" name="name" id="task-name">
+  <input type="text" class="form-control" name="name" id="task-name">
 </form>
 
 <h2>Current Tasks</h2>
-<table>
+<table class="table">
   <thead>
     <th>Task</th><th>&nbsp;</th>
   </thead>
@@ -19,11 +20,12 @@
           <form action="/tasks/{{$task->id}}" method="POST">
             {{ csrf_field() }}
             {{ method_field('DELETE') }}
-            <button>Delete</button>
+            <button class="btn btn-primary">Delete</button>
           </form>
         </td>
       </tr>
     @endforeach
   </tbody>
 </table>
+</div>
 @endsection
