@@ -4,7 +4,13 @@
 <h1>Task List</h1>
 <form action="/tasks" method="POST">
   {{ csrf_field() }}
-  <input type="text" class="form-control" name="name" id="task-name">
+  <div>
+    <label>Task</label>
+    <div>
+      <input type="text" class="form-control" name="name" id="task-name">
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Add Task</button>
 </form>
 
 <h2>Current Tasks</h2>
